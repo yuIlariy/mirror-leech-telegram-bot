@@ -21,10 +21,10 @@ async def start(_, message):
     
     if await CustomFilters.authorized(_, message):
         start_string = f"""
-**Welcome to the Mirror & Leech Bot!** 🚀
+Welcome to the Mirror & Leech Bot! 🚀
 
 I can seamlessly mirror files from:
-**Links | Telegram Files | Torrents | NZB | Rclone Cloud**
+Links | Telegram Files | Torrents | NZB | Rclone Cloud
 ...directly to any Rclone cloud, Google Drive, or back to Telegram.
 
 Type /{BotCommands.HelpCommand} to see a list of all available commands.
@@ -36,11 +36,11 @@ Type /{BotCommands.HelpCommand} to see a list of all available commands.
         )
     else:
         unauth_string = f"""
-**Welcome to the Mirror & Leech Bot!** 🚀
+Welcome to the Mirror & Leech Bot! 🚀
 
-I can mirror files from **Links | TG Files | Torrents | NZB | Rclone** to Google Drive, Telegram, or any Rclone cloud.
+I can mirror files from Links | TG Files | Torrents | NZB | Rclone to Google Drive, Telegram, or any Rclone cloud.
 
-⚠️ **Access Denied:** You are not an authorized user! 
+⚠️ Access Denied. You are not an authorized user! 
 Please deploy your own mirror-leech bot to use these features.
 """
         await message.reply_photo(
