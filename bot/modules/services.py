@@ -40,7 +40,7 @@ Welcome to the Mirror & Leech Bot! 🚀
 
 I can mirror files from Links | TG Files | Torrents | NZB | Rclone to Google Drive, Telegram, or any Rclone cloud.
 
-⚠️ Access Denied. You are not an authorized user! 
+⚠️ Access Denied: You are not an authorized user! 
 Please deploy your own mirror-leech bot to use these features.
 """
         await message.reply_photo(
