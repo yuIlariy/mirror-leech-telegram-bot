@@ -8,7 +8,7 @@ from ..helper.telegram_helper.bot_commands import BotCommands
 
 
 @new_task
-async def start(client, message):
+async def start(_, message):
     buttons = ButtonMaker()
     buttons.url_button(
         "Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot"
@@ -19,7 +19,7 @@ async def start(client, message):
     # Thumbnail photo
     photo_url = "https://telegra.ph/file/e292b12890b8b4b9dcbd1.jpg"
     
-    if await CustomFilters.authorized(client, message):
+    if await CustomFilters.authorized(_, message):
         start_string = f"""
 **Welcome to the Mirror & Leech Bot!** 🚀
 
@@ -48,3 +48,16 @@ Please deploy your own mirror-leech bot to use these features.
             caption=unauth_string, 
             reply_markup=reply_markup
         )
+
+
+@new_task
+async def ping(_, message):
+    start_time = int(round(time() * 1000))
+    reply = await send_message(message, "Starting Ping")
+    end_time = int(round(time() * 1000))
+    await edit_message(reply, f"{end_time - start_time} ms")
+
+
+@new_task
+async def log(_, message):
+    await send_file(message, "log.txt")
